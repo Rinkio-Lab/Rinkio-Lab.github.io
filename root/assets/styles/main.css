@@ -44,6 +44,7 @@ body, html, code {
     background: var(--bg);
     color: var(--text);
     transition: background .3s, color .3s;
+    user-select: none; /* 禁止选中文本 */
 }
 
 /* === 重写 Materialize 组件 === */
