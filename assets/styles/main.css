@@ -28,7 +28,7 @@ body.dark-theme {
 /* === 通用样式 === */
 @font-face {
     font-family: 'Mono Custom';
-    src: url('../font/SarasaMonoSC-Regular.ttf') format('truetype');
+    src: url('../fonts/SarasaMonoSC-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
