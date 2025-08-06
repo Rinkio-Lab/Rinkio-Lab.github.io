@@ -27,8 +27,9 @@ body.dark-theme {
 
 /* === 通用样式 === */
 @font-face {
-    font-family: 'Mono Custom';
-    src: url('../fonts/SarasaMonoSC-Regular.ttf') format('truetype');
+    font-family: 'SarasaMonoSC';
+    src: url('../fonts/SarasaMonoSC-Regular.woff2') format('woff2'),
+        url('../fonts/SarasaMonoSC-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,7 +40,7 @@ html, body {
 
 body, html, code {
     margin: 0;
-    font-family: "Mono Custom", "Roboto", "Helvetica Neue", sans-serif;
+    font-family: "SarasaMonoSC", "Roboto", "Helvetica Neue", sans-serif;
     background: var(--bg);
     color: var(--text);
     transition: background .3s, color .3s;
@@ -301,13 +302,13 @@ pre:hover .copy-code-button {
     vertical-align: bottom;
     transition: min-width 0.3s ease;
     cursor: pointer;
-    font-family: "Mono Custom", "Roboto", "Helvetica Neue", sans-serif;
+    font-family: "SarasaMonoSC", "Roboto", "Helvetica Neue", sans-serif;
 }
 
 .abbr-typing.animating {
     pointer-events: none;
     opacity: 0.8;
-    font-family: "Mono Custom", "Roboto", "Helvetica Neue", sans-serif;
+    font-family: "SarasaMonoSC", "Roboto", "Helvetica Neue", sans-serif;
 }
 
 /* === 高亮.js 样式适配 === */
