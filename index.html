@@ -1,223 +1,155 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Rinkio's Blog</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/materialize.min.css">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <link rel="stylesheet" href="assets/styles/highlight-js.default.min.css">
-    <meta name="description" content="Rinkio's Blog">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinkio's Blog - 跳转中转页</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background 1.5s ease;
+            color: #e6e6e6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            z-index: -1;
+            animation: bgGradient 10s ease infinite;
+        }
+
+        @keyframes bgGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background-color: rgba(20, 20, 30, 0.8);
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+            border: 1px solid #2a2a4a;
+        }
+
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #b3b3cc;
+            margin-bottom: 30px;
+        }
+
+        .counter {
+            font-size: 24px;
+            color: #4a90e2;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #2a2a4a;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4a90e2;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 3px solid #4a90e2;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- 顶部导航 -->
-    <ul id="nav-mobile" class="sidenav">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="assets/images/bg-i.svg" alt="Background Image">
-                </div>
-                <a href="#user"><img class="circle"
-                        src="assets/images/avatar.png" alt="User Image"></a>
-                <a href="#name"><span class="white-text name">Rinkio's Blog</span></a>
-                <a href="#email"><span class="white-text email">me@example.com</span></a>
-            </div>
-        </li>
-        <li><a href="#home" class="tab-trigger sidenav-close"><i class="material-icons">home</i>首页</a></li>
-        <li><a href="#blog" class="tab-trigger sidenav-close"><i class="material-icons">article</i>博客</a></li>
-        <li><a href="#diary" class="tab-trigger sidenav-close"><i class="material-icons">book</i>日记</a></li>
-        <li><a href="#contact" class="tab-trigger sidenav-close"><i class="material-icons">mail</i>联系</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="subheader">更多</a></li>
-        <li><a id="theme-toggle-sidenav" class="sidenav-close" title="切换主题"><i
-                    class="material-icons">brightness_4</i>切换主题</a></li>
-        <li><a class="sidenav-close" href="https://github.com/Rinkio-Lab" target="_blank"><i class="material-icons">code</i>GitHub</a></li>
-        <li><a class="sidenav-close" href="#!"><i class="material-icons">rss_feed</i>RSS</a></li>
-    </ul>
-    <nav class="ultramarine">
-        <div class="nav-wrapper container">
-            <a href="#" class="brand-logo"><i class="material-icons left">blur_on</i>Rinkio's</a>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#home" class="tab-trigger active">首页</a></li>
-                <li><a href="#blog" class="tab-trigger">博客</a></li>
-                <li><a href="#diary" class="tab-trigger">日记</a></li>
-                <li><a href="#contact" class="tab-trigger">联系</a></li>
-                <li><a id="theme-toggle" title="切换主题"><i class="material-icons">brightness_4</i></a></li>
-            </ul>
+    <div class="container">
+        <img src="https://blog-8goli0oq.maozi.io/assets/images/avatar.png" alt="Rinkio" class="avatar">
+        <h1>Rinkio's Blog</h1>
+        <p>正在跳转到目标页面，请稍候...</p>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
         </div>
-    </nav>
+        <div class="counter" id="counter">3秒后跳转</div>
+        <p>如果页面没有自动跳转，请<a href="https://blog-8goli0oq.maozi.io/">点击这里</a></p>
+    </div>
 
-    <!-- 主内容 -->
-    <main>
-        <!-- Hero -->
-        <section id="hero" class="center ultramarine-gradient white-text">
-            <div class="container">
-                <img src="assets/images/avatar.png" alt="avatar"
-                    class="circle responsive-img z-depth-2" width="120" />
-                <div style="margin-bottom: 50px;">
-                    <div class="hero-content type-container">
-                        <span id="ghost"></span>
-                        <span id="typewriter"></span>
-                    </div>
-                    <p style="margin-top: 10px; margin-bottom: 10px;">I'm Rinkio, a student from China</span></p>
-
-                </div>
-                <p class="quote-block" style="margin-top: 10px;"></p>
-
-                <a href="#blog" class="btn-large waves-effect waves-light ultramarine-border white-text js-scroll">
-                    阅读博客<i class="material-icons right">arrow_forward</i>
-                </a>
-            </div>
-        </section>
-
-        <!-- 动态 Tab 区域 -->
-        <div class="container tab-container">
-            <!-- 首页 / 个人介绍 -->
-            <!-- 首页 / 个人介绍 -->
-            <section id="home" class="tab-section">
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card hoverable">
-                            <div class="card-content">
-                                <span class="card-title"><i class="material-icons left">face</i>关于我</span>
-                                <p>你好，欢迎来到我的<a href="#">小小据点</a>。<br>
-                                    我记录代码，也记录思考。<br>
-                                    写下学习的痕迹，也保留日常的微光。<br><br>
-                                    这里没有确定的主题，只有持续变化的兴趣。<br>
-                                    语言、技术、创作、生活——都是我探索世界的方式。<br>
-                                    如果你也在寻找属于自己的容身之处，<br>
-                                    希望这里能让你感到片刻的安心。<br><br>
-                                    欢迎与我交流，分享你的故事。<br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="card hoverable">
-                            <div class="card-content">
-                                <span class="card-title"><i class="material-icons left">favorite</i>兴趣</span>
-                                <div class="chip tag-common">Anime</div>
-                                <div class="chip tag-common">Music</div>
-                                <div class="chip tag-common">Coding</div>
-                                <div class="chip tag-common">Learning</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="card hoverable">
-                            <div class="card-content">
-                                <span class="card-title"><i class="material-icons left">cake</i>信息</span>
-                                <p>July, 2009</p>
-                                <p>Sanmenxia City, Henan Province, China</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="card hoverable">
-                            <div class="card-content">
-                                <span class="card-title"><i class="material-icons left">work</i>技能</span>
-                                <p>HTML / CSS / JavaScript / Python, etc..</p>
-                                <p>持续学习中...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="card hoverable">
-                            <div class="card-content">
-                                <span class="card-title"><i class="material-icons left">movie_filter</i><a
-                                        href="https://girls-band-cry.com/"><span class="abbr-typing" data-short="GBC"
-                                            data-full="Girls Band Cry">GBC</span></a></span>
-                                <p>这个世界总是背叛我们。<br>
-                                    什么事情都不会按照我们的意愿发展。<br>
-                                    但是，因为我们有热爱着的事物。<br>
-                                    因为我们相信有属于自己的容身之处。<br><br>
-                                    所以、高歌着。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 博客 -->
-            <section id="blog" class="tab-section hide">
-                <h4>最新博客</h4>
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="assets/images/banner.svg"
-                                    alt="文章头图" class="responsive-img materialboxed">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">示例博客文章</span>
-                                <p>这是一篇示例博客文章的摘要，用于展示卡片内容的布局。</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="posts/post-1.html">阅读全文</a>
-                                <span class="chip">Tag</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="assets/images/banner.svg"
-                                    alt="文章头图" class="responsive-img materialboxed">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">示例博客文章</span>
-                                <p>这是一篇示例博客文章的摘要，用于展示卡片内容的布局。</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="posts/post-2.html">阅读全文</a>
-                                <span class="chip">Tag</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 日记 -->
-            <section id="diary" class="tab-section hide">
-                <h4>我的日记</h4>
-                <ul class="collection">
-                    <li class="collection-item"><a href="diary/diary-2025-08-06.html">2025-08-06：示例日记</a></li>
-                </ul>
-            </section>
-
-            <!-- 联系 -->
-            <section id="contact" class="tab-section hide">
-                <h4>联系我</h4>
-                <p>有任何问题或合作，欢迎通过以下方式找到我：</p>
-                <div class="contact-links">
-                    <a href="mailto:limebow2@gmail.com"
-                        class="btn-floating btn-large waves-effect waves-light ultramarine tooltipped"
-                        data-position="bottom" data-tooltip="Email"><i class="material-icons">mail</i></a>
-                    <a href="https://github.com/Rinkio-Lab" target="_blank"
-                        class="btn-floating btn-large waves-effect waves-light ultramarine tooltipped"
-                        data-position="bottom" data-tooltip="GitHub"><img
-                            src="assets/images/github.png" alt="Github"
-                            style="width: 28px; height: 28px; vertical-align: middle;"></a>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- JS -->
-    <script src="assets/scripts/materialize.min.js"></script>
-    <script src="assets/scripts/highlight.min.js"></script>
-    <script src="assets/scripts/go.min.js"></script>
     <script>
-        hljs.highlightAll();
-    </script>
+        // 跳转倒计时和进度条
+        let timeLeft = 3;
+        const counterElement = document.getElementById('counter');
+        const progressElement = document.getElementById('progress');
 
-    <script src="assets/scripts/main.js"></script>
+        const interval = setInterval(() => {
+            timeLeft--;
+            counterElement.textContent = `${timeLeft}秒后跳转`;
+
+            // 更新进度条
+            const progressPercentage = ((3 - timeLeft) / 3) * 100;
+            progressElement.style.width = `${progressPercentage}%`;
+
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                window.location.href = "https://blog-8goli0oq.maozi.io/";
+            }
+        }, 1000);
+
+        // 初始显示进度条
+        setTimeout(() => {
+            progressElement.style.width = "0%";
+            setTimeout(() => {
+                progressElement.style.width = "100%";
+            }, 10);
+        }, 10);
+    </script>
 </body>
 
 </html>
