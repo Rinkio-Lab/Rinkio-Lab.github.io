@@ -10,10 +10,35 @@
     <meta name="description" content="文章摘要">
     <meta name="keywords" content="关键词1, 关键词2">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url("../assets/fonts/Material\ Icons.woff2") format('woff2');
+        }
+    
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/styles/materialize.min.css">
+    <link rel="stylesheet" href="../assets/fonts/Iosevka.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <link rel="stylesheet" href="../assets/styles/highlight-js.default.min.css">
 </head>
 
 <body>
@@ -32,7 +57,8 @@
     <!-- 主体 -->
     <main class="container article">
         <div class="img-container">
-            <img src="https://placehold.co/600x400/EEE/31343C?font=roboto&text=Banner\nExample" alt="文章头图" class="responsive-img materialboxed">
+            <img src="../assets/images/banner.svg" alt="文章头图"
+                class="responsive-img materialboxed">
             <div class="expand-button">展开全图</div>
         </div>
         <h1>文章标题</h1>
@@ -55,9 +81,9 @@
         </a>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <script src="../assets/scripts/materialize.min.js"></script>
+    <script src="../assets/scripts/highlight.min.js"></script>
+    <script src="../assets/scripts/go.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>

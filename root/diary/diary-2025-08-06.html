@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>文章标题 | Rinkio's Blog</title>
+    <title>「忙しい一日」 | Rinkio's Blog</title>
 
-    <!-- SEO（博客开，日记关） -->
-    <meta name="description" content="文章摘要">
-    <meta name="keywords" content="关键词1, 关键词2">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url("../assets/fonts/Material\ Icons.woff2") format('woff2');
+        }
+    
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/styles/materialize.min.css">
+    <link rel="stylesheet" href="../assets/fonts/Iosevka.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <link rel="stylesheet" href="../assets/styles/highlight-js.default.min.css">
 </head>
 
 <body>
@@ -32,11 +53,11 @@
     <!-- 主体 -->
     <main class="container article">
         <div class="img-container">
-            <img src="https://placehold.co/600x400/EEE/31343C?font=roboto&text=Banner\nExample" alt="文章头图"
+            <img src="../assets/images/diary.svg" alt="文章头图"
                 class="responsive-img materialboxed">
             <div class="expand-button">展开全图</div>
         </div>
-        <h1>文章标题</h1>
+        <h1>「忙しい一日」</h1>
         <div class="meta">
             <span class="chip">Tag</span>
             <!-- <span class="chip">Tag</span> -->
@@ -44,10 +65,27 @@
         </div>
 
         <article class="flow-text">
-            <p>正文从这里开始……</p>
-            <h3>小标题</h3>
-            <p>继续写内容。</p>
-            <pre><code class="language-python">print('Example Code')</code></pre>
+            <h3>日記 令和七年八月六日</h3>
+
+            <p>リンキヨ</p><br>
+
+            <p>今日は忙しい<ruby>一日<rp>(</rp><rt>いちにち</rt><rp>)</rp></ruby>でした。
+            朝起きて、公園を<ruby>散歩<rp>(</rp><rt>さんぽ</rt><rp>)</rp></ruby>しました。</p>
+
+            <p>朝ご飯は普通でしたが、美味しかったです。
+            ご飯を食べた後、アニメを見ました。
+            このアニメはとても綺麗ですね。
+            私はそのアニメから、
+            色々な<ruby>真実<rp>(</rp><rt>しんじつ</rt><rp>)</rp></ruby>を<ruby>学<rp>(</rp><rt>まな</rt><rp>)</rp></ruby>びました。</p>
+
+            <p>その<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>、パソコンを使って、
+            動画を作りましたが、まだ<ruby>完成<rp>(</rp><rt>かんせい</rt><rp>)</rp></ruby>していません。</p>
+
+            <p>今は十時ですが、未だ<ruby>眠<rp>(</rp><rt>ねむ</rt><rp>)</rp></ruby>っていません。
+            私は<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れました。
+            ちょっと<ruby>休憩<rp>(</rp><rt>きゅうけい</rt><rp>)</rp></ruby>を取りたいです。</p><br>
+
+            <p>※私が新しく覚えた単語には振り仮名を振ります。</p>
         </article>
 
         <div class="divider"></div>
@@ -56,9 +94,9 @@
         </a>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <script src="../assets/scripts/materialize.min.js"></script>
+    <script src="../assets/scripts/highlight.min.js"></script>
+    <script src="../assets/scripts/go.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
