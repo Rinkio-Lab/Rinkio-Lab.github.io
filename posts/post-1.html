@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>文章标题 | Rinkio's Blog</title>
+
+    <!-- SEO（博客开，日记关） -->
+    <meta name="description" content="文章摘要">
+    <meta name="keywords" content="关键词1, 关键词2">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+</head>
+
+<body>
+    <!-- 顶栏 -->
+    <nav class="ultramarine">
+        <div class="nav-wrapper container">
+            <a href="../index.html#blog" class="brand-logo">
+                <i class="material-icons left">arrow_back</i>Rinkio's
+            </a>
+            <ul class="right">
+                <li><a id="theme-toggle" title="切换主题"><i class="material-icons">brightness_4</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主体 -->
+    <main class="container article">
+        <div class="img-container">
+            <img src="https://placehold.co/600x400/EEE/31343C?font=roboto&text=Banner\nExample" alt="文章头图" class="responsive-img materialboxed">
+            <div class="expand-button">展开全图</div>
+        </div>
+        <h1>文章标题</h1>
+        <div class="meta">
+            <span class="chip">Tag</span>
+            <!-- <span class="chip">Tag</span> -->
+            <span class="date">2025-08-06</span>
+        </div>
+
+        <article class="flow-text">
+            <p>正文从这里开始……</p>
+            <h3>小标题</h3>
+            <p>继续写内容。</p>
+            <pre><code class="language-python">print('Example Code')</code></pre>
+        </article>
+
+        <div class="divider"></div>
+        <a href="../index.html#blog" class="btn-flat">
+            <i class="material-icons left">home</i>返回首页
+        </a>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script src="../assets/scripts/main.js"></script>
+</body>
+
+</html>
