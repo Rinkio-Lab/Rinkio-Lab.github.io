@@ -1,3 +1,5 @@
+import { clickEffect } from './click-effect.js'; // 引入点击效果脚本
+
 /* ===== 统一主题持久化 ===== */
 (function () {
     const body = document.body;
@@ -36,6 +38,12 @@
 
 /* ===== 首页 Tab 与平滑滚动 ===== */
 document.addEventListener('DOMContentLoaded', () => {
+    clickEffect({
+        maxBallSize: 16,
+        decayRate: 0.25,
+        longPressThreshold: 400, // 自定义长按时间
+    });
+
     // 初始化侧边导航
     M.Sidenav.init(document.querySelectorAll('.sidenav'));
     // Tab 切换
@@ -137,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 插入格言块
-    quoteHtml = "<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>りも<ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>びも<ruby>哀<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しさも <ruby>全部<rp>(</rp><rt>ぜんぶ</rt><rp>)</rp></ruby>ぶちこめ。"
+    let quoteHtml = "<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>りも<ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>びも<ruby>哀<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しさも <ruby>全部<rp>(</rp><rt>ぜんぶ</rt><rp>)</rp></ruby>ぶちこめ。"
 
     // 仅在首页显示
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+body.dark-theme {
+    background-color: #222;
+    color: #eee;
+}
+
+.container {
+    background: inherit;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+body.dark-theme .container {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+body.dark-theme h1 {
+    color: #ddd;
+}
+
+p {
+    margin-bottom: 15px;
+    color: inherit;
+}
+
+#targetUrl {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+body.dark-theme #targetUrl {
+    color: #6cc0ff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#confirmBtn {
+    background-color: #0066cc;
+    color: white;
+}
+
+#confirmBtn:hover {
+    background-color: #0055aa;
+}
+
+#cancelBtn {
+    background-color: #ccc;
+    color: #333;
+}
+
+#cancelBtn:hover {
+    background-color: #bbb;
+}
