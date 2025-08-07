@@ -59,6 +59,16 @@ a:hover {
     text-decoration: underline;
 }
 
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    margin-right: 15px;
+    margin-bottom: 8px;
+}
+
 /* === 重写 Materialize 组件 === */
 .card,
 .collection,

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>GIRLS BAND CRY BUTTON | Rinkio's Blog</title>
+
+    <!-- 字体图标 -->
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url("../assets/fonts/Material\ Icons.woff2") format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons' !important;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 28px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ✅ 暗色模式下文字颜色适配 */
+        body.dark-mode #trackInfo,
+        body.dark-mode #timeDisplay {
+            color: #ccc;
+        }
+
+        /* ✅ 控制按钮尺寸与配色 */
+        #prevBtn,
+        #playPauseBtn,
+        #nextBtn,
+        #stopBtn {
+            margin: 0 10px;
+        }
+
+        /* ✅ 各按钮独立配色 */
+        #prevBtn {
+            background-color: #673ab7 !important;
+        }
+
+        #playPauseBtn {
+            background-color: #3f51b5 !important;
+            transform: scale(1.8);
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        body > main > div.section {
+            margin-bottom: 80px;
+        }
+
+        #nextBtn {
+            background-color: #009688 !important;
+        }
+
+        #stopBtn {
+            background-color: #e53935 !important;
+        }
+
+        /* ✅ 放大播放&停止图标 */
+        #playPauseBtn .material-icons {
+            font-size: 40px;
+        }
+    </style>
+
+    <!-- 样式表 -->
+    <link rel="stylesheet" href="../assets/styles/external/materialize.min.css" />
+    <link rel="stylesheet" href="../assets/fonts/Iosevka.css" />
+    <link rel="stylesheet" href="../assets/styles/main.css" />
+</head>
+
+<body>
+    <!-- 顶栏 -->
+    <nav class="ultramarine">
+        <div class="nav-wrapper container">
+            <a href="../index.html#blog" class="brand-logo">
+                <i class="material-icons left">arrow_back</i>Rinkio's | GIRLS BAND CRY BUTTON
+            </a>
+            <!-- <ul class="right">
+                <li>
+                    <a id="theme-toggle" title="切换主题"><i class="material-icons">brightness_4</i></a>
+                </li>
+            </ul> -->
+        </div>
+    </nav>
+
+    <!-- 播放器主体 -->
+    <main class="container" style="margin-top: 40px; text-align:center;">
+
+        <p id="trackInfo" class="flow-text grey-text text-darken-1">正在播放：Loading…</p>
+
+        <!-- 控制按钮组 -->
+        <div class="section" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a id="prevBtn" class="btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons">skip_previous</i>
+            </a>
+            <a id="playPauseBtn" class="btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons" id="playPauseIcon">play_arrow</i>
+            </a>
+            <a id="nextBtn" class="btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons">skip_next</i>
+            </a>
+            <a id="stopBtn" class="btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons">stop</i>
+            </a>
+        </div>
+
+        <!-- 时间显示 -->
+        <p id="timeDisplay" class="grey-text text-darken-1">00:00 / 00:00</p>
+
+        <!-- 进度条 -->
+        <div class="range-field">
+            <input type="range" id="progressBar" min="0" max="100" step="0.1" />
+        </div>
+    </main>
+
+    <!-- 音频标签 -->
+    <audio id="audio" preload="metadata"></audio>
+
+    <!-- 播放器脚本 -->
+    <script>
+        const playlist = [
+            { url: "music/OSHINKO.mp3", title: "おしんこ（吉野家的小曲）" },
+            { url: "music/ZATO_BOKURANOMACHI.mp3", title: "雑踏、僕らの街" },
+            { url: "music/SORA_NO_HAKO.mp3", title: "空の箱 (井芹仁菜、河原木桃香)" }
+        ];
+        let currentTrack = 0;
+
+        const audio = document.getElementById("audio");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const playPauseIcon = document.getElementById("playPauseIcon");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const stopBtn = document.getElementById("stopBtn");
+        const trackInfo = document.getElementById("trackInfo");
+        const timeDisplay = document.getElementById("timeDisplay");
+        const progressBar = document.getElementById("progressBar");
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function updateTime() {
+            timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration || 0)}`;
+            progressBar.max = isNaN(audio.duration) ? 0 : audio.duration;
+            progressBar.value = audio.currentTime;
+        }
+
+        function loadTrack(i, autoplay = true) {
+            currentTrack = i;
+            audio.src = playlist[i].url;
+            trackInfo.textContent = `正在播放：${playlist[i].title}`;
+            if (autoplay) {
+                audio.play();
+                playPauseIcon.textContent = 'pause';
+            } else {
+                playPauseIcon.textContent = 'play_arrow';
+            }
+        }
+
+        playPauseBtn.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.textContent = 'pause';
+            } else {
+                audio.pause();
+                playPauseIcon.textContent = 'play_arrow';
+            }
+        });
+
+        prevBtn.addEventListener("click", () => loadTrack((currentTrack - 1 + playlist.length) % playlist.length));
+        nextBtn.addEventListener("click", () => loadTrack((currentTrack + 1) % playlist.length));
+        stopBtn.addEventListener("click", () => {
+            audio.pause();
+            audio.currentTime = 0;
+            playPauseIcon.textContent = 'play_arrow';
+        });
+
+        audio.addEventListener("timeupdate", updateTime);
+        progressBar.addEventListener("input", () => {
+            if (!isNaN(audio.duration)) {
+                audio.currentTime = Math.min(progressBar.value, audio.duration);
+            }
+        });
+
+        audio.addEventListener("ended", () => loadTrack((currentTrack + 1) % playlist.length));
+
+        window.addEventListener("load", () => {
+            loadTrack(0, false);
+            updateTime();
+        });
+    </script>
+
+    <script src="../assets/scripts/external/materialize.min.js"></script>
+    <script src="../assets/scripts/darkmode-btn.js"></script>
+    <script>createDarkModeButton();</script>
+</body>
+
+</html>
