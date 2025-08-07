@@ -26,17 +26,37 @@ body.dark-theme {
 }
 
 /* === 通用样式 === */
-html, body {
-    min-height: 100vh; /* 确保背景覆盖整个可滚动区域 */
+
+/* 强制全局字体 */
+:root, *, body, html {
+    font-family: "Iosevka Web", "Roboto", "Helvetica Neue", sans-serif !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: none; /* 防止在移动设备上出现滚动条 */
+}
+
+main {
+    flex-grow: 1;
 }
 
 body, html, code {
     margin: 0;
-    font-family: "Iosevka Web", "Roboto", "Helvetica Neue", sans-serif;
     background: var(--bg);
     color: var(--text);
     transition: background .3s, color .3s;
     user-select: none; /* 禁止选中文本 */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* === 重写 Materialize 组件 === */
@@ -189,6 +209,42 @@ blockquote p {
     margin: 0;
 }
 
+/* === Masonry 布局样式 === */
+.grid {
+    position: relative;
+}
+
+.grid-item {
+    width: calc(33.333% - 20px); /* 默认三列，减去间距 */
+    float: left;
+    transition: transform .2s ease-out;
+    padding: 10px; /* 添加间距 */
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid-item .card {
+    margin: 0;
+}
+
+
+/* 响应式调整 */
+@media only screen and (max-width: 992px) {
+    .grid-item {
+        width: calc(50% - 20px); /* 中等屏幕两列，减去间距 */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-item {
+        width: calc(100% - 20px); /* 小屏幕一列，减去间距 */
+    }
+}
+
 #hero > div > p {
     font-size: 1.4em;
 }
@@ -295,13 +351,11 @@ pre:hover .copy-code-button {
     vertical-align: bottom;
     transition: min-width 0.3s ease;
     cursor: pointer;
-    font-family: "Iosevka Web", "Roboto", "Helvetica Neue", sans-serif;
 }
 
 .abbr-typing.animating {
     pointer-events: none;
     opacity: 0.8;
-    font-family: "Iosevka Web", "Roboto", "Helvetica Neue", sans-serif;
 }
 
 /* === 高亮.js 样式适配 === */
@@ -368,6 +422,17 @@ body.dark-theme .hljs-emphasis {
 
 body.dark-theme .hljs-strong {
     font-weight: bold;
+}
+
+/* === 底部样式 === */
+footer {
+    background-color: rgb(201, 201, 201);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.dark-theme footer {
+    background-color: rgb(51, 51, 51); 
 }
 
 /* === 按钮样式 === */

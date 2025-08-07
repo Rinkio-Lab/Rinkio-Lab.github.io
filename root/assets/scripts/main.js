@@ -139,8 +139,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 插入格言块
     quoteHtml = "<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>りも<ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>びも<ruby>哀<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しさも <ruby>全部<rp>(</rp><rt>ぜんぶ</rt><rp>)</rp></ruby>ぶちこめ。"
 
-    const quoteBlock = document.querySelector("#hero > div > p")
-    quoteBlock.innerHTML = quoteHtml;
+    // 仅在首页显示
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        const quoteBlock = document.querySelector("#hero > div > p");
+        if (quoteBlock) {
+            quoteBlock.innerHTML = quoteHtml;
+        }
+    }
 
     // 打字机效果
     const messages = ["Hello!", "你好!", "こんにちは!", "¡Hola!", "Bonjour!", "안녕하세요!", "Привет!", "Ciao!", "Olá!"];
@@ -182,6 +187,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typewriterElement && ghostElement) {
         typeWriterEffect();
+    }
+
+    // 初始化 Masonry 布局
+    const grid = document.querySelector('.grid');
+    if (grid) {
+        const msnry = new Masonry(grid, {
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-item',
+            percentPosition: true
+        });
+
+        // 确保图片加载完成后重新布局
+        imagesLoaded(grid).on('progress', function() {
+            msnry.layout();
+        });
     }
 
     function measureTextWidth(text, baseEl) {

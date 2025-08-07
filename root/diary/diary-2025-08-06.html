@@ -15,7 +15,7 @@
         }
     
         .material-icons {
-            font-family: 'Material Icons';
+            font-family: 'Material Icons' !important;
             font-weight: normal;
             font-style: normal;
             font-size: 24px;
@@ -31,10 +31,10 @@
             -webkit-font-smoothing: antialiased;
         }
     </style>
-    <link rel="stylesheet" href="../assets/styles/materialize.min.css">
+    <link rel="stylesheet" href="../assets/styles/external/materialize.min.css">
     <link rel="stylesheet" href="../assets/fonts/Iosevka.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/highlight-js.default.min.css">
+    <link rel="stylesheet" href="../assets/styles/external/highlight-js.default.min.css">
 </head>
 
 <body>
@@ -94,12 +94,21 @@
         </a>
     </main>
 
-    <script src="../assets/scripts/materialize.min.js"></script>
-    <script src="../assets/scripts/highlight.min.js"></script>
-    <script src="../assets/scripts/go.min.js"></script>
+    <script src="../assets/scripts/external/materialize.min.js"></script>
+    <script src="../assets/scripts/external/highlight.min.js"></script>
+    <script src="../assets/scripts/external/go.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
+
+    <!-- 加载浮动暗黑模式按钮 -->
+    <script src="../assets/scripts/darkmode-btn.js"></script>
+    <script>
+        createDarkModeButton();
+    </script>
+
+    <script src="assets/scripts/modal-img.js" defer></script>
+
     <script src="../assets/scripts/main.js"></script>
     <footer>
         <div class="container">

@@ -12,9 +12,9 @@
             font-weight: 400;
             src: url("assets/fonts/Material\ Icons.woff2") format('woff2');
         }
-    
+
         .material-icons {
-            font-family: 'Material Icons';
+            font-family: 'Material Icons' !important;
             font-weight: normal;
             font-style: normal;
             font-size: 24px;
@@ -30,10 +30,11 @@
             -webkit-font-smoothing: antialiased;
         }
     </style>
-    <link rel="stylesheet" href="assets/styles/materialize.min.css">
+    <link rel="stylesheet" href="assets/styles/external/materialize.min.css">
     <link rel="stylesheet" href="assets/fonts/Iosevka.css">
     <link rel="stylesheet" href="assets/styles/main.css">
-    <link rel="stylesheet" href="assets/styles/highlight-js.default.min.css">
+    <link rel="stylesheet" href="assets/styles/external/highlight-js.default.min.css">
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <meta name="description" content="Rinkio's Blog">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -50,8 +51,7 @@
                 <div class="background">
                     <img src="assets/images/bg-i.svg" alt="Background Image">
                 </div>
-                <a href="#user"><img class="circle"
-                        src="assets/images/avatar.png" alt="User Image"></a>
+                <a href="#user"><img class="circle" src="assets/images/avatar.png" alt="User Image"></a>
                 <a href="#name"><span class="white-text name">Rinkio's Blog</span></a>
                 <a href="#email"><span class="white-text email">me@example.com</span></a>
             </div>
@@ -66,12 +66,13 @@
         <li><a class="subheader">更多</a></li>
         <li><a id="theme-toggle-sidenav" class="sidenav-close" title="切换主题"><i
                     class="material-icons">brightness_4</i>切换主题</a></li>
-        <li><a class="sidenav-close" href="https://github.com/Rinkio-Lab" target="_blank"><i class="material-icons">code</i>GitHub</a></li>
+        <li><a class="sidenav-close" href="https://github.com/Rinkio-Lab" target="_blank"><i
+                    class="material-icons">code</i>GitHub</a></li>
         <li><a class="sidenav-close" href="#!"><i class="material-icons">rss_feed</i>RSS</a></li>
         <li>
             <div class="divider"></div>
         </li>
-        <li><a class="subheader">网站版本：Version 1.3.2 Preview</a></li>
+        <li><a class="subheader">网站版本：Version 1.3.3 Preview</a></li>
     </ul>
     <nav class="ultramarine">
         <div class="nav-wrapper container">
@@ -92,8 +93,8 @@
         <!-- Hero -->
         <section id="hero" class="center ultramarine-gradient white-text">
             <div class="container">
-                <img src="assets/images/avatar.png" alt="avatar"
-                    class="circle responsive-img z-depth-2" width="120" />
+                <img src="assets/images/avatar.png" alt="avatar" class="circle responsive-img z-depth-2"
+                    width="120" />
                 <div style="margin-bottom: 50px;">
                     <div class="hero-content type-container">
                         <span id="ghost"></span>
@@ -115,8 +116,8 @@
             <!-- 首页 / 个人介绍 -->
             <!-- 首页 / 个人介绍 -->
             <section id="home" class="tab-section">
-                <div class="row">
-                    <div class="col s12 m4">
+                <div class="row grid">
+                    <div class="grid-item">
                         <div class="card hoverable">
                             <div class="card-content">
                                 <span class="card-title"><i class="material-icons left">face</i>关于我</span>
@@ -132,7 +133,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="grid-item">
                         <div class="card hoverable">
                             <div class="card-content">
                                 <span class="card-title"><i class="material-icons left">favorite</i>兴趣</span>
@@ -143,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="grid-item">
                         <div class="card hoverable">
                             <div class="card-content">
                                 <span class="card-title"><i class="material-icons left">cake</i>信息</span>
@@ -152,7 +153,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="grid-item">
                         <div class="card hoverable">
                             <div class="card-content">
                                 <span class="card-title"><i class="material-icons left">work</i>技能</span>
@@ -161,12 +162,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="grid-item">
                         <div class="card hoverable">
                             <div class="card-content">
                                 <span class="card-title"><i class="material-icons left">movie_filter</i><a
-                                        href="https://girls-band-cry.com/" target="_blank"><span class="abbr-typing" data-short="GBC"
-                                            data-full="Girls Band Cry">GBC</span></a></span>
+                                        href="link.html?target=https://girls-band-cry.com/"><span class="abbr-typing"
+                                            data-short="GBC" data-full="Girls Band Cry">GBC</span></a></span>
                                 <p>这个世界总是背叛我们。<br>
                                     什么事情都不会按照我们的意愿发展。<br>
                                     但是，因为我们有热爱着的事物。<br>
@@ -185,8 +186,8 @@
                     <div class="col s12 m6 l4">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="assets/images/banner.svg"
-                                    alt="文章头图" class="responsive-img materialboxed">
+                                <img src="assets/images/banner.svg" alt="文章头图"
+                                    class="responsive-img materialboxed preview">
                             </div>
                             <div class="card-content">
                                 <span class="card-title">示例博客文章</span>
@@ -201,8 +202,8 @@
                     <div class="col s12 m6 l4">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="assets/images/banner.svg"
-                                    alt="文章头图" class="responsive-img materialboxed">
+                                <img src="assets/images/banner.svg" alt="文章头图"
+                                    class="responsive-img materialboxed preview">
                             </div>
                             <div class="card-content">
                                 <span class="card-title">示例博客文章</span>
@@ -235,8 +236,7 @@
                         data-position="bottom" data-tooltip="Email"><i class="material-icons">mail</i></a>
                     <a href="https://github.com/Rinkio-Lab" target="_blank"
                         class="btn-floating btn-large waves-effect waves-light ultramarine tooltipped"
-                        data-position="bottom" data-tooltip="GitHub"><img
-                            src="assets/images/github.png" alt="Github"
+                        data-position="bottom" data-tooltip="GitHub"><img src="assets/images/github.png" alt="Github"
                             style="width: 28px; height: 28px; vertical-align: middle;"></a>
                 </div>
             </section>
@@ -244,12 +244,20 @@
     </main>
 
     <!-- JS -->
-    <script src="assets/scripts/materialize.min.js"></script>
-    <script src="assets/scripts/highlight.min.js"></script>
-    <script src="assets/scripts/go.min.js"></script>
+    <script src="assets/scripts/external/materialize.min.js"></script>
+    <script src="assets/scripts/external/highlight.min.js"></script>
+    <script src="assets/scripts/external/go.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
+
+    <!-- 加载浮动暗黑模式按钮 -->
+    <script src="assets/scripts/darkmode-btn.js"></script>
+    <script>
+        createDarkModeButton();
+    </script>
+
+    <script src="assets/scripts/modal-img.js" defer></script>
 
     <script src="assets/scripts/main.js"></script>
     <footer>
@@ -257,6 +265,7 @@
             <p>&copy; 2025 Rinkio's Blog. All rights reserved.</p>
         </div>
     </footer>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 </body>
 
 </html>
